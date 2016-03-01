@@ -1,0 +1,49 @@
+MPG Estimator
+========================================================
+author: Erik
+date: 2/29/2016
+
+Welcome
+========================================================
+
+This slideshow will show an amazing MPG estimator. 
+- Data from 1974 Motor Trend Magazine
+- Web based input
+- Linear modeling used to create output
+
+Background
+========================================================
+
+This prediction program was developed using the MTCars dataset.
+```{r echo =FALSE}
+data("mtcars")
+mtcars$cyl <- as.factor(mtcars$cyl)
+```
+<font size = "5">
+```{r}
+head(mtcars, 5)
+```
+</font>
+
+Model Fit
+========================================================
+The model used to predict MPG is as follows:
+<font size = "7">
+```{r, tidy=TRUE}
+fit <- lm(mpg ~ wt + cyl -1, mtcars)
+
+fit$coefficients
+
+```
+</font>
+
+More info
+========================================================
+This application is found:
+https://erikpfa.shinyapps.io/MPGEstimator/
+
+The code for these slides and the appplication can be found here:
+
+https://github.com/erikpfa/Coursera-Data-Products-MPG-Estimator
+
+Once again thank you for taking your time to review this.
